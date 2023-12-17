@@ -1,0 +1,41 @@
+-----------------Junit---------------
+
+If there's no failure then test is succeeded.
+If nothing fails then it is pass.
+Whenever we write unit test the method should be public void. no other signature is allowed.
+Each test should be atomic. one test per one condition
+
+before java 5 there were no annotations for the @Test etc at that time method name starts with test.
+
+
+@Test annotation is used to mark a method as a test method. it is mandatory otherwise method will work as normal method which will only gets executed when it is called.
+
+
+@Before annotation will execute method before each test everytime
+
+@After annotation will execute method after each test everytime
+
+@BeforeClass annotations are used to mark methods to get executed only oncce even before any of the test get's execute
+
+@AfterClass annotations are used to mark methods to get executed only after all the tests are executed
+
+
+We can catch excpetions in the test in two ways one is try catch block.
+when using try catch block if excpetion occurs or not doesn't matter as we we will catch exception if there's any
+When using  	@Test(expected = NullPointerException.class) then there must exception occurs otherwise test will fail.
+
+
+@Test(timeout = 10) is used to check the performance aspect of the test whether the method is getting executed completely in time defined or not.
+
+---------------JunitSuite---------------
+
+@RunWith(Suite.class)
+@SuiteClasses({ BeforeAfterTest.class, StringHelperParametrizedTest.class })
+public class AllTests {
+
+}
+
+This will run only those tests those are mentioned in the suite classes and will skip rest of them.
+
+
+
